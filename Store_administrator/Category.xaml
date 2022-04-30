@@ -1,0 +1,32 @@
+﻿<Window x:Class="Store_administrator.Category"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store_administrator"
+        mc:Ignorable="d"
+  Title="Category" Height="720" Width="1080" Background="#ffdadada">
+    <Grid >
+        <Menu Background="Transparent" Margin="0,0,33.6,0"/>
+        <Border x:Name="s1" MinWidth="1000" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1250" CornerRadius="25" Height="625" HorizontalAlignment="Left" Width="935" Margin="40,29,0,0">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <Label Content="   Категории товаров" FontSize="48" FontFamily="Agency FB" FontWeight="Bold" FontStyle="Italic" Margin="225.4,0.4,209.6,536.4"/>
+
+        </Border>
+        <Button Content="Водка" HorizontalAlignment="Left" Margin="337,129,0,0" VerticalAlignment="Top" Width="411" Height="87" FontSize="36" FontFamily="Franklin Gothic Book" FontWeight="Normal"/>
+        <Button Content="Бальзам" HorizontalAlignment="Left" Margin="337,259,0,0" VerticalAlignment="Top" Width="411" Height="88" FontSize="36" FontFamily="Franklin Gothic Book" FontWeight="Normal"/>
+        <Button Content="Коньяк" HorizontalAlignment="Left" Margin="337,391,0,0" VerticalAlignment="Top" Width="411" Height="87" FontSize="36" Click="Button_Click" FontFamily="Franklin Gothic Book"/>
+        <Button Content="Вино" HorizontalAlignment="Left" Margin="337,522,0,0" VerticalAlignment="Top" Width="411" Height="87" FontSize="36" FontFamily="Franklin Gothic Book"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="228,116,0,0" VerticalAlignment="Top" Width="45" Source="vodka.png"/>
+        <Image HorizontalAlignment="Left" Height="101" Margin="228,246,0,0" VerticalAlignment="Top" Width="45" Source="БАЛЬЗАМ.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="215,378,0,0" VerticalAlignment="Top" Width="71" Source="Коньяк.png"/>
+        <Image HorizontalAlignment="Left" Height="101" Margin="205,508,0,0" VerticalAlignment="Top" Width="103" Source="wine_PNG99057.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="797,116,0,0" VerticalAlignment="Top" Width="45" Source="vodka.png"/>
+        <Image HorizontalAlignment="Left" Height="101" Margin="797,246,0,0" VerticalAlignment="Top" Width="45" Source="БАЛЬЗАМ.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="784,378,0,0" VerticalAlignment="Top" Width="71" Source="Коньяк.png"/>
+        <Image HorizontalAlignment="Left" Height="101" Margin="774,508,0,0" VerticalAlignment="Top" Width="104" Source="wine_PNG99057.png"/>
+
+    </Grid>
+</Window>

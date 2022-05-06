@@ -23,5 +23,12 @@ namespace Store_administrator
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Goods obj = new Goods();
+            obj.Show();
+            this.Close();
+        }
     }
 }

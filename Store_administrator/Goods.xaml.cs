@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+using System;
 
 namespace Store_administrator
 {
@@ -19,19 +12,159 @@ namespace Store_administrator
     /// </summary>
     public partial class Goods : Window
     {
+        string connectionString;
+        SqlDataAdapter adapter;
+        System.Data.DataTable goodsTable;
         public Goods()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string sql = "SELECT * FROM Goods";
+            goodsTable = new System.Data.DataTable();
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand(sql, connection);
 
+                adapter = new SqlDataAdapter(command);
+
+                // установка команды на добавление для вызова хранимой процедуры
+                adapter.InsertCommand = new SqlCommand("sp_InsertGoods", connection);
+                adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@name", SqlDbType.NVarChar, 50, "Name"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@capacity", SqlDbType.Float, 0, "Capacity"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@amount", SqlDbType.Int, 0, "Amount"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.Float, 0, "Price"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@manufacturer", SqlDbType.NVarChar, 50, "Manufacturer"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar, 50, "Type"));
+  
+                SqlParameter parameter = adapter.InsertCommand.Parameters.Add("@Id", SqlDbType.Int, 0, "Id");
+                parameter.Direction = ParameterDirection.Output;
+
+                connection.Open();
+                adapter.Fill(goodsTable);
+                goodsGrid.ItemsSource = goodsTable.DefaultView;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
+        }
+        private void UpdateDB()
+        {
+            SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
+            adapter.Update(goodsTable);
+        }
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateDB();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (goodsGrid.SelectedItems != null)
+            {
+                for (int i = 0; i < goodsGrid.SelectedItems.Count; i++)
+                {
+                    DataRowView datarowView = goodsGrid.SelectedItems[i] as DataRowView;
+                    if (datarowView != null)
+                    {
+                        DataRow dataRow = (DataRow)datarowView.Row;
+                        dataRow.Delete();
+                    }
+                }
+            }
+            UpdateDB();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods ORDER BY Amount";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods WHERE Type LIKE '%Водка%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods WHERE Type LIKE '%Коньяк%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods WHERE Type LIKE '%Бальзам%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods WHERE Type LIKE '%Вино%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods ORDER BY Price";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
         }
     }
 }

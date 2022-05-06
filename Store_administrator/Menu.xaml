@@ -17,7 +17,7 @@
         </Border>
         <Button Content="Добавить администратора" HorizontalAlignment="Left" Margin="337,382,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20"/>
         <Button Content="Справка" HorizontalAlignment="Left" Margin="337,496,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20"/>
-        <Button Content="Товары" HorizontalAlignment="Left" Margin="337,268,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20"/>
+        <Button Content="Товары" HorizontalAlignment="Left" Margin="337,268,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20" Click="Button_Click"/>
 
     </Grid>
 </Window>

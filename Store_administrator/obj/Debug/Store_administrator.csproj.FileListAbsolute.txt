@@ -26,3 +26,15 @@ E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Goods.g
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Menu.g.cs
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Menu.baml
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Goods.baml
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\AddGood.g.cs
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\regist.g.cs
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\AddGood.baml
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\regist.baml
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.AccessControl.dll
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.Permissions.dll
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.Principal.Windows.dll
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.AccessControl.xml
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.Permissions.xml
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.Principal.Windows.xml

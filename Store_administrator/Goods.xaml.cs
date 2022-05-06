@@ -19,6 +19,11 @@ namespace Store_administrator
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            goodsGrid.RowEditEnding += GoodsGrid_RowEditEnding;
+        }
+        private void GoodsGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            UpdateDB();
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -159,6 +164,44 @@ namespace Store_administrator
         {
             SqlConnection connection = null;
             string sql = "SELECT * FROM Goods ORDER BY Price";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            Menu obj = new Menu();
+            obj.Show();
+            this.Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            string search = textBoxSearch.Text.Trim();
+            SqlConnection connection = null;
+            string sql = $"SELECT * FROM Goods WHERE Name LIKE '%{search}%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            string proiz= textBoxManafacture.Text.Trim();
+            SqlConnection connection = null;
+            string sql = $"SELECT * FROM Goods WHERE Manufacturer LIKE '%{proiz}%'";
             connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(sql, connection);
             adapter = new SqlDataAdapter(command);

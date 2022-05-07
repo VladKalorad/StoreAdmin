@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
         mc:Ignorable="d"
-  Title="Menu" Height="720" Width="1080" Background="#ffdadada">
+  Title="Menu" Height="720" Width="1080" Background="#ffdadada" WindowStartupLocation="CenterScreen">
     <Grid >
         <Menu Background="Transparent"/>
         <Border x:Name="s1" MinWidth="800" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="500" CornerRadius="25" Height="494" HorizontalAlignment="Left" Width="739" Margin="163,119,0,0">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <Label Content="Меню" FontSize="72" FontFamily="Agency FB" FontWeight="Bold" FontStyle="Italic" Margin="276.4,0.4,272.6,393"/>
+            <Label Content="Меню" FontSize="48" FontFamily="Agency FB" FontWeight="Bold" FontStyle="Italic" Margin="325.4,0.4,223.6,393"/>
 
         </Border>
-        <Button Content="Добавить администратора" HorizontalAlignment="Left" Margin="337,382,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20"/>
-        <Button Content="Справка" HorizontalAlignment="Left" Margin="337,496,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20"/>
+        <Button Content="Добавить администратора" HorizontalAlignment="Left" Margin="337,382,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20" Click="Button_Click_1"/>
+        <Button Content="Справка" HorizontalAlignment="Left" Margin="337,496,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20" Click="Button_Click_2"/>
         <Button Content="Товары" HorizontalAlignment="Left" Margin="337,268,0,0" VerticalAlignment="Top" Width="440" Height="66" FontSize="20" Click="Button_Click"/>
 
     </Grid>

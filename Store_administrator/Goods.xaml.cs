@@ -209,5 +209,11 @@ namespace Store_administrator
             goodsTable.Clear();
             adapter.Fill(goodsTable);
         }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            AddGood obj = new AddGood();
+            obj.Show();
+        }
     }
 }

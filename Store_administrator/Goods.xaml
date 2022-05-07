@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.Goods"
         mc:Ignorable="d"
-        Title="Goods" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded">
+        Title="Goods" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded" WindowStartupLocation="Manual" Cursor="Arrow">
     <Grid >
         <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="486" HorizontalAlignment="Left" Width="1065" Margin="35,11,0,0">
             <Border.Effect>
@@ -40,7 +40,7 @@
         <Button Content="Вино" HorizontalAlignment="Left" Margin="845,608,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_5"/>
         <Button Content="Товары на складе" HorizontalAlignment="Left" Margin="324,665,0,0" VerticalAlignment="Top" Width="223" Height="39" FontSize="20"/>
         <Button Content="Отчет" HorizontalAlignment="Left" Margin="586,665,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="60,665,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="60,665,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_10"/>
         <Border x:Name="s1_Copy1" MinWidth="300" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="486" HorizontalAlignment="Left" Width="368" Margin="1131,11,0,0">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>

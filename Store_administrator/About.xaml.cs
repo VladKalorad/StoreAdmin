@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace Store_administrator
 {
     /// <summary>
-    /// Логика взаимодействия для AddGood.xaml
+    /// Логика взаимодействия для About.xaml
     /// </summary>
-    public partial class AddGood : Window
+    public partial class About : Window
     {
-        public AddGood()
+        public About()
         {
             InitializeComponent();
-        }
-
-        private void textBoxManafacture_Copy1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void ButtonAdd_Click_8(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

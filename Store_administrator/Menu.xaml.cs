@@ -30,5 +30,19 @@ namespace Store_administrator
             obj.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            regist obj = new regist();
+            obj.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            About obj = new About();
+            obj.Show();
+            this.Close();
+        }
     }
 }

@@ -17,9 +17,9 @@
                 <Grid Margin="0 0 0 20"/>
                 <TextBlock FontSize="28" FontWeight="Bold" Margin="0 0 0 20" TextDecorations="{x:Null}" FontStyle="Italic" ><Run Text="&#x9;         "/><Run Text="Регистрация"/></TextBlock>
 
-                <TextBox FontSize="16" materialDesign:HintAssist.Hint="     Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox FontSize="16" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
-                <PasswordBox FontSize="16" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
+                <TextBox x:Name="textBoxLogin" FontSize="16" materialDesign:HintAssist.Hint="     Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox x:Name="passBox" FontSize="16" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
+                <PasswordBox x:Name="passBox_2" FontSize="16" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
                 <Button Content="Регистрация" Margin="100 40" Click="Button_Click"/>
             </StackPanel>
         </Border>

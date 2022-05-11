@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Configuration;
+using System.Data;
 
 namespace Store_administrator
 {
@@ -20,44 +14,46 @@ namespace Store_administrator
     /// </summary>
     public partial class MainWindow : Window
     {
+        string connectionString;
+        SqlDataAdapter adapter;
+        System.Data.DataTable goodsTable;
         public MainWindow()
         {
             InitializeComponent();
+            
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            textBoxLogin.MaxLength = 50;
+            passBox.MaxLength = 50;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string login = textBoxLogin.Text.Trim();
-            string pass = passBox.Password.Trim();
-            string pass_2 = passBox_2.Password.Trim();
-            if (login.Length < 6)
-            {
-                textBoxLogin.ToolTip = "Данное поле должно содержать более 6 символов!";
-                textBoxLogin.Background = Brushes.DarkRed;
-            }
-            else if(pass.Length < 6)
-            {
-                passBox.ToolTip = "Данное поле должно содержать более 6 символов!";
-                passBox.Background = Brushes.DarkRed;
-            }
-            else if (pass != pass_2)
-            {
-                passBox_2.ToolTip = "Поля не совпадают";
-                passBox_2.Background = Brushes.DarkRed;
-            }
-            else
-            {
-                textBoxLogin.ToolTip = "";
-                textBoxLogin.Background = Brushes.Transparent;
-                passBox.ToolTip = "";
-                passBox.Background = Brushes.Transparent;
-                passBox_2.ToolTip = "";
-                passBox_2.Background = Brushes.Transparent;
+            SqlConnection connection = null;
+            var loginuser = textBoxLogin.Text;
+            var passUser = passBox.Password;
 
-                MessageBox.Show("Вы успешно авторизовались!");
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            connection = new SqlConnection(connectionString);
+
+            string query = $"SELECT * FROM Users WHERE Login = '{loginuser}' and Password = '{passUser}'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if(table.Rows.Count == 1)
+            {
+                MessageBox.Show("Вы успешно авторизовались", "Успешно", MessageBoxButton.OK);
                 Menu obj = new Menu();
                 obj.Show();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Такого аккаунта не существует!", "Аккаунта не существует", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

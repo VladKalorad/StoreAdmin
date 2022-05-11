@@ -19,9 +19,12 @@ namespace Store_administrator
     /// </summary>
     public partial class AddGood : Window
     {
+        string connectionString;
+        System.Data.DataTable goodsTable;
         public AddGood()
         {
             InitializeComponent();
+
         }
 
         private void textBoxManafacture_Copy1_TextChanged(object sender, TextChangedEventArgs e)

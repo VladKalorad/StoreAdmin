@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="«‎Crystal&quot; " Height="720" Width="1080" WindowStyle="ThreeDBorderWindow" Margin="-2,0,0,0" BorderThickness="0" WindowStartupLocation="CenterScreen">
+        Title="«‎Crystal&quot; " Height="720" Width="1080" WindowStyle="ThreeDBorderWindow" Margin="-2,0,0,0" BorderThickness="0" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid Background="#ffdadada">
         <Border MinWidth="400" Margin="15" VerticalAlignment="Center" Padding="30" MaxWidth="600" CornerRadius="20" Background="White">
             <Border.Effect>
@@ -19,8 +19,7 @@
                 <TextBlock Text="       Авторизация администратора" FontSize="28" FontWeight="Bold" Margin="0 0 0 20" TextDecorations="{x:Null}" FontStyle="Italic" />
 
                 <TextBox x:Name="textBoxLogin" FontSize="16" materialDesign:HintAssist.Hint="     Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox x:Name="passBox" FontSize="16" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
-                <PasswordBox x:Name="passBox_2" FontSize="16" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
+                <PasswordBox x:Name="passBox" FontSize="16" materialDesign:HintAssist.Hint="  Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
                 <Button Content="Войти" Margin="100 40" Click="Button_Click"/>
             </StackPanel>
         </Border>

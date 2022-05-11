@@ -16,7 +16,6 @@ namespace Store_administrator
     {
         string connectionString;
         SqlDataAdapter adapter;
-        System.Data.DataTable goodsTable;
         public MainWindow()
         {
             InitializeComponent();
@@ -55,6 +54,12 @@ namespace Store_administrator
             {
                 MessageBox.Show("Такого аккаунта не существует!", "Аккаунта не существует", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        {
+            textBoxLogin.Text = "";
+            passBox.Password = "";
         }
     }
 }

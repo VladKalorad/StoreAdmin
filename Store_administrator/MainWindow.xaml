@@ -20,7 +20,8 @@
 
                 <TextBox x:Name="textBoxLogin" FontSize="16" materialDesign:HintAssist.Hint="     Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passBox" FontSize="16" materialDesign:HintAssist.Hint="  Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
-                <Button Content="Войти" Margin="100 40" Click="Button_Click"/>
+                <Button Content="Войти" Margin=" 100  40 100 15" Click="Button_Click"/>
+                <Button Content="Очистить" Margin=" 100  0 100 0" Click="ButtonClear_Click" Background="#FFD4524D"/>
             </StackPanel>
         </Border>
 

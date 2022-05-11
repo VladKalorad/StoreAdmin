@@ -18,16 +18,16 @@ using System.Data;
 namespace Store_administrator
 {
     /// <summary>
-    /// Логика взаимодействия для regist.xaml
-    /// </Сделал Чернявский>
-    public partial class regist : Window
+    /// Логика взаимодействия для Registration.xaml
+    /// </summary>
+    public partial class Registration : Window
     {
         string connectionString;
         SqlDataAdapter adapter;
-        public regist()
+        public Registration()
         {
+            InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,13 +44,13 @@ namespace Store_administrator
             SqlCommand command = new SqlCommand(query, connection);
 
             connection.Open();
-            if(command.ExecuteNonQuery() ==1)
+            if (command.ExecuteNonQuery() == 1)
             {
-                MessageBox.Show("Аккаунт успешно создан","Успех!");
+                MessageBox.Show("Аккаунт успешно создан", "Успех!");
 
             }
             else { MessageBox.Show("Аккаунт не создан"); }
-            connection.Close(); 
+            connection.Close();
         }
         private Boolean checkUser()
         {
@@ -68,7 +68,7 @@ namespace Store_administrator
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if(table.Rows.Count > 0)
+            if (table.Rows.Count > 0)
             {
                 MessageBox.Show("Пользователь уже существует");
                 return true;
@@ -77,33 +77,3 @@ namespace Store_administrator
         }
     }
 }
-//string login = textBoxLogin.Text.Trim();
-//string pass = passBox.Password.Trim();
-//string pass_2 = passBox_2.Password.Trim();
-//if (login.Length < 6)
-//{
-//    textBoxLogin.ToolTip = "Данное поле должно содержать более 6 символов!";
-//    textBoxLogin.Background = Brushes.DarkRed;
-//}
-//else if (pass.Length < 6)
-//{
-//    passBox.ToolTip = "Данное поле должно содержать более 6 символов!";
-//    passBox.Background = Brushes.DarkRed;
-//}
-//else if (pass != pass_2)
-//{
-//    passBox_2.ToolTip = "Поля не совпадают";
-//    passBox_2.Background = Brushes.DarkRed;
-//}
-//else
-//{
-//    textBoxLogin.ToolTip = "";
-//    textBoxLogin.Background = Brushes.Transparent;
-//    passBox.ToolTip = "";
-//    passBox.Background = Brushes.Transparent;
-//    passBox_2.ToolTip = "";
-//    passBox_2.Background = Brushes.Transparent;
-
-//    MessageBox.Show("Вы успешно авторизовались!");
-
-//}

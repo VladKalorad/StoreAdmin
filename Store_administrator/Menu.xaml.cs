@@ -33,8 +33,8 @@ namespace Store_administrator
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            regist obj = new regist();
-            obj.Show();
+            Registration reg = new Registration();
+            reg.Show();
             this.Close();
         }
 

@@ -84,10 +84,11 @@
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="regist.xaml.cs">
-      <DependentUpon>regist.xaml</DependentUpon>
-    </Compile>
     <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addadm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,6 +108,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Addadm.xaml.cs">
+      <DependentUpon>Addadm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddGood.xaml.cs">
       <DependentUpon>AddGood.xaml</DependentUpon>
     </Compile>
@@ -125,10 +129,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Menu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="regist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

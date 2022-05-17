@@ -6,23 +6,23 @@
         xmlns:local="clr-namespace:Store_administrator"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="regist" Height="720" Width="1080">
-    <Grid Background="#ffdadada">
-        <Border MinWidth="400" Margin="15" VerticalAlignment="Center" Padding="30" MaxWidth="600" CornerRadius="20"  Background="White">
+        Title="regist" Height="763.2" Width="1296" Loaded="Window_Loaded">
+    <Grid Background="#ffdadada" Margin="0,0,3.6,-1.4">
+        <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="486" HorizontalAlignment="Left" Width="1065" Margin="35,11,-26.4,0">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0" />
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <StackPanel>
-
-                <Grid Margin="0 0 0 20"/>
-                <TextBlock FontSize="28" FontWeight="Bold" Margin="0 0 0 20" TextDecorations="{x:Null}" FontStyle="Italic" ><Run Text="&#x9;         "/><Run Text="Регистрация"/></TextBlock>
-
-                <TextBox x:Name="textBoxLogin" FontSize="16" materialDesign:HintAssist.Hint="     Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox x:Name="passBox" FontSize="16" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
-                <PasswordBox x:Name="passBox_2" FontSize="16" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
-                <Button Content="Регистрация" Margin="100 40" Click="Button_Click"/>
-            </StackPanel>
+            <DataGrid x:Name="goodsGrid" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Background="#FFEDEDED" FontSize="18" FontStyle="Italic" FontWeight="Bold" HorizontalGridLinesBrush="#FF080707" VerticalGridLinesBrush="#FF030303" Margin="0.4,0.4,-0.6,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Логин" Width="540"/>
+                    <DataGridTextColumn Binding="{Binding Capacity}" Header="Пароль" Width="540"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Border>
-
+        <Border x:Name="s1_Copy" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="169" HorizontalAlignment="Left" Width="1065" Margin="35,520,0,0">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+        </Border>
     </Grid>
 </Window>

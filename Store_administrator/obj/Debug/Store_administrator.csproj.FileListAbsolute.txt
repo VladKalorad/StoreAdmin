@@ -40,5 +40,3 @@ E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.
 E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\System.Security.Principal.Windows.xml
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\About.g.cs
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\About.baml
-E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Registration.g.cs
-E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Registration.baml

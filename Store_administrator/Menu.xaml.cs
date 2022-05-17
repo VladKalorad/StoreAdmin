@@ -33,9 +33,9 @@ namespace Store_administrator
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Registration reg = new Registration();
-            reg.Show();
-            this.Close();
+           //Registration reg = new Registration();
+           //reg.Show();
+           //this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

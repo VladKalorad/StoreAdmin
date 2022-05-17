@@ -46,7 +46,7 @@ namespace Store_administrator
                 adapter.InsertCommand = new SqlCommand("sp_InsertGoods", connection);
                 adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@name", SqlDbType.NVarChar, 50, "Name"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@capacity", SqlDbType.Float, 0, "Capacity"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@capacity", SqlDbType.NVarChar, 50, "Capacity"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@amount", SqlDbType.Int, 0, "Amount"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.Float, 0, "Price"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@manufacturer", SqlDbType.NVarChar, 50, "Manufacturer"));
@@ -214,6 +214,7 @@ namespace Store_administrator
         {
             AddGood obj = new AddGood();
             obj.Show();
+            this.Close();   
         }
     }
 }

@@ -24,6 +24,7 @@ namespace Store_administrator
     {
         string connectionString;
         SqlDataAdapter adapter;
+        System.Data.DataTable usersTable;
         public regist()
         {
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -32,48 +33,48 @@ namespace Store_administrator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection connection = null;
-            var login = textBoxLogin.Text.Trim();
-            var password = passBox.Password.Trim();
-
-            string query = $"INSERT INTO Users(Login, Password) values('{login}','{password}')";
-
-            connection = new SqlConnection(connectionString);
-
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            connection.Open();
-            if(command.ExecuteNonQuery() ==1)
-            {
-                MessageBox.Show("Аккаунт успешно создан","Успех!");
-
-            }
-            else { MessageBox.Show("Аккаунт не создан"); }
-            connection.Close(); 
+            
         }
-        private Boolean checkUser()
+       
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string sql = "SELECT * FROM Users";
+            usersTable = new System.Data.DataTable();
             SqlConnection connection = null;
-            var loginuser = textBoxLogin.Text.Trim();
-            var passuser = passBox.Password.Trim();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();
-            string query = $"SELECT *  FROM Users WHERE Login ='{loginuser}' and Password = '{passuser}'";
-            connection = new SqlConnection(connectionString);
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-
-            if(table.Rows.Count > 0)
+            try
             {
-                MessageBox.Show("Пользователь уже существует");
-                return true;
+                connection = new SqlConnection(connectionString);
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                adapter = new SqlDataAdapter(command);
+
+                // установка команды на добавление для вызова хранимой процедуры
+                adapter.InsertCommand = new SqlCommand("sp_InsertGoods", connection);
+                adapter.InsertCommand.CommandType = CommandType.StoredProcedure;
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@login", SqlDbType.VarChar, 50, "Login"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@password", SqlDbType.VarChar, 0, "Password"));
+
+                SqlParameter parameter = adapter.InsertCommand.Parameters.Add("@Id", SqlDbType.Int, 0, "Id");
+                parameter.Direction = ParameterDirection.Output;
+
+                connection.Open();
+                adapter.Fill(usersTable);
+                goodsGrid.ItemsSource = usersTable.DefaultView;
             }
-            else { return false; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection != null)
+                    connection.Close();
+            }
         }
     }
 }

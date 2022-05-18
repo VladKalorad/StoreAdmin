@@ -58,7 +58,9 @@ namespace Store_administrator
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            New_adm adminka = new New_adm();
+            adminka.Show();
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -80,5 +82,11 @@ namespace Store_administrator
         {
 
         }
+        private void UpdateDB()
+        {
+            SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
+            adapter.Update(goodsTable);
+        }
+
     }
 }

@@ -14,8 +14,8 @@
             <DataGrid x:Name="goodsGrid" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Background="#FFEDEDED" FontSize="18" FontStyle="Italic" FontWeight="Bold" HorizontalGridLinesBrush="#FF080707" VerticalGridLinesBrush="#FF030303" Margin="0.4,0.4,-0.6,0" >
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Binding="{Binding Login}" Header="Название" Width="540"/>
-                    <DataGridTextColumn Binding="{Binding Password}" Header="Объем" Width="540"/>
+                    <DataGridTextColumn Binding="{Binding Login}" Header="Логин" Width="540"/>
+                    <DataGridTextColumn Binding="{Binding Password}" Header="Пароль" Width="540"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Border>

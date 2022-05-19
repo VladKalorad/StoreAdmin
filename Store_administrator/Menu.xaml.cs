@@ -44,5 +44,12 @@ namespace Store_administrator
             obj.Show();
             this.Close();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            stock obj = new stock();
+            obj.Show();
+            this.Close();
+        }
     }
 }

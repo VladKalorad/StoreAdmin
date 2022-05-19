@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.New_adm"
         mc:Ignorable="d"
-        Title="New_adm" Height="700" Width="1400" Background="#ffdadada">
+        Title="New_adm" Height="700" Width="1400" Background="#ffdadada" WindowState="Maximized">
     <Grid>
 
         <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="359" HorizontalAlignment="Left" Width="742" Margin="331,172,0,0">

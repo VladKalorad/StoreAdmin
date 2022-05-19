@@ -41,6 +41,7 @@ namespace Store_administrator
         private void ButtonAdd_Click_8(object sender, RoutedEventArgs e)
         {
             SqlConnection connection = null;
+            
             var amount = Convert.ToInt32(textBoxAmount.Text);
             var manafacture = textBoxManafacture.Text;
             var price = float.Parse(textBoxPrice.Text, CultureInfo.InvariantCulture);
@@ -58,7 +59,7 @@ namespace Store_administrator
 
 
             connection.Open();
-            if (textBoxAmount.Text.Length == 0 || textBoxManafacture.Text.Length == 0 || textBoxPrice.Text.Length == 0 || textBoxName.Text.Length == 0 )
+            if (textBoxAmount.Text.Length == null|| textBoxManafacture.Text.Length == null || textBoxPrice.Text.Length == null || textBoxName.Text.Length == null )
             {
                 MessageBox.Show("Заполните поле!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }

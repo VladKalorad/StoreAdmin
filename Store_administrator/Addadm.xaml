@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
         mc:Ignorable="d"
-        Title="Addadm" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded">
+        Title="Addadm" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid>
         <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="486" HorizontalAlignment="Left" Width="1065" Margin="118,31,0,0">
             <Border.Effect>

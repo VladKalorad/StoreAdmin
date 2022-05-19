@@ -56,10 +56,5 @@ namespace Store_administrator
             }
         }
 
-        private void ButtonClear_Click(object sender, RoutedEventArgs e)
-        {
-            textBoxLogin.Text = "";
-            passBox.Password = "";
-        }
     }
 }

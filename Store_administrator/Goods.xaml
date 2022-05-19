@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.Goods"
         mc:Ignorable="d"
-        Title="Goods" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded" WindowStartupLocation="Manual" Cursor="Arrow">
+        Title="Goods" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded" WindowStartupLocation="Manual" Cursor="Arrow" WindowState="Maximized">
     <Grid >
         <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="486" HorizontalAlignment="Left" Width="1065" Margin="35,11,0,0">
             <Border.Effect>
@@ -28,7 +28,7 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" Height="39" FontSize="24" Background="#FFDC4D4D" Margin="800.4,140.4,0,0" Click="Button_Click_7"/>
+            <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" Height="39" FontSize="24" Background="#FFDC4D4D" Margin="800.4,140.4,0,0" Click="Button_Click_7" BorderBrush="#FFEE3333"/>
         </Border>
         <Button Content="Обновить" HorizontalAlignment="Left" Margin="60,550,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="updateButton_Click"/>
         <Button Content="Удалить" HorizontalAlignment="Left" Margin="324,550,0,0" VerticalAlignment="Top" Width="223" Height="39" FontSize="20" Click="deleteButton_Click"/>

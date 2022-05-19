@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="«‎Crystal&quot; " Height="720" Width="1080" WindowStyle="ThreeDBorderWindow" Margin="-2,0,0,0" BorderThickness="0" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="«‎Crystal&quot; " Height="720" Width="1080" WindowStyle="ThreeDBorderWindow" Margin="-2,0,0,0" BorderThickness="0" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid Background="#ffdadada">
         <Border MinWidth="400" Margin="15" VerticalAlignment="Center" Padding="30" MaxWidth="600" CornerRadius="20" Background="White">
             <Border.Effect>
@@ -21,7 +21,6 @@
                 <TextBox x:Name="textBoxLogin" FontSize="16" materialDesign:HintAssist.Hint="     Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passBox" FontSize="16" materialDesign:HintAssist.Hint="  Введите пароль" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
                 <Button Content="Войти" Margin=" 100  40 100 15" Click="Button_Click"/>
-                <Button Content="Очистить" Margin=" 100  0 100 0" Click="ButtonClear_Click" Background="#FFD4524D"/>
             </StackPanel>
         </Border>
 

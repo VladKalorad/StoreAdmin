@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.AddGood"
         mc:Ignorable="d"
-        Title="AddGood" Height="1000" Width="1900" Background="#ffdadada" WindowStartupLocation="Manual" >
+        Title="AddGood" Height="1000" Width="1900" Background="#ffdadada" WindowStartupLocation="Manual" WindowState="Maximized" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -30,7 +30,7 @@
         <Label Content="Количество:" HorizontalAlignment="Left" Margin="407,369,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="128"/>
         <Label Content="Тип:" HorizontalAlignment="Left" Margin="724,498,0,0" VerticalAlignment="Top" Height="34" Width="62" FontSize="20" FontWeight="Bold"/>
         <Label Content="Добавление товара:" HorizontalAlignment="Left" Margin="554,156,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <ComboBox Name="capacityList" HorizontalAlignment="Left" Margin="406,565,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="capacityList_SelectionChanged" >
+        <ComboBox Name="capacityList" HorizontalAlignment="Left" Margin="406,562,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="capacityList_SelectionChanged" FontSize="18" >
             <ComboBoxItem Content="0.3"/>
             <ComboBoxItem Content="0.5"/>
             <ComboBoxItem Content="0.7"/>
@@ -40,7 +40,7 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="5"/>
         </ComboBox>
-        <ComboBox x:Name="TypeList" HorizontalAlignment="Left" Margin="724,565,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="TypeList_SelectionChanged" >
+        <ComboBox x:Name="TypeList" HorizontalAlignment="Left" Margin="724,565,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="TypeList_SelectionChanged" FontSize="18" >
             <ComboBoxItem Content="Водка"/>
             <ComboBoxItem Content="Коньяк"/>
             <ComboBoxItem Content="Бальзам"/>

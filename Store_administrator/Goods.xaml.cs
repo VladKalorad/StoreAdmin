@@ -216,5 +216,29 @@ namespace Store_administrator
             obj.Show();
             this.Close();   
         }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            stock obj = new stock();
+            obj.Show();
+            this.Close();
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Goods WHERE Amount < 1";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
     }
 }

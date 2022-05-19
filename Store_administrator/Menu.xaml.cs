@@ -51,5 +51,12 @@ namespace Store_administrator
             obj.Show();
             this.Close();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Bid obj = new Bid();
+            obj.Show();
+            this.Close();
+        }
     }
 }

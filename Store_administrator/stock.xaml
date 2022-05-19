@@ -35,7 +35,7 @@
 
         <Label Content="Поиск по производителю" HorizontalAlignment="Left" Margin="1198,321,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
         <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,446,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_9"/>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,207,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_8" BorderBrush="#FF40997B">
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,207,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_8" BorderBrush="#FF673AB7">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FF7239D9"/>
@@ -50,14 +50,17 @@
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,485,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,490,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
         <Label Content="Поиск по категории" HorizontalAlignment="Left" Margin="1201,578,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
-        <TextBox x:Name="textBoxManafacture_Copy" HorizontalAlignment="Left" Height="36" Margin="1204,636,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите категорию" VerticalAlignment="Top" Width="222" FontSize="20"/>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,705,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_9"/>
+        <TextBox x:Name="textBoxCategory" HorizontalAlignment="Left" Height="36" Margin="1204,636,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите категорию" VerticalAlignment="Top" Width="222" FontSize="20"/>
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,705,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click"/>
         <Border x:Name="s1_Copy" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="225" HorizontalAlignment="Left" Width="1065" Margin="35,548,0,0">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
         </Border>
-        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="222" Height="39" FontSize="24" Background="#FFDC4D4D" Margin="846,705,0,0" Click="Button_Click_7" BorderBrush="#FFEE3333"/>
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="315" Height="39" FontSize="24" Background="#FFDC4D4D" Margin="760,703,0,0" Click="Button_Click_7" BorderBrush="#FFEE3333"/>
+        <Label Content="Склад" HorizontalAlignment="Left" Margin="1278,10,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Height="51" Width="79"/>
+        <Button Content="Перенести товар" HorizontalAlignment="Left" VerticalAlignment="Top" Width="336" Height="40" FontSize="24" Background="#FF673AB7" Margin="75,578,0,0" Click="Button_Click_7" BorderBrush="#FF6D46B3"/>
+        <Button Content="Заявка на покупку товара" HorizontalAlignment="Left" VerticalAlignment="Top" Width="336" Height="40" FontSize="24" Background="#FF673AB7" Margin="75,642,0,0" Click="Button_Click_7" BorderBrush="#FF6D46B3"/>
 
     </Grid>
 </Window>

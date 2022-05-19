@@ -21,12 +21,12 @@
         <Button Content="Вино" HorizontalAlignment="Left" Margin="337,522,0,0" VerticalAlignment="Top" Width="411" Height="87" FontSize="36" FontFamily="Franklin Gothic Book"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="228,116,0,0" VerticalAlignment="Top" Width="45" Source="vodka.png"/>
         <Image HorizontalAlignment="Left" Height="101" Margin="228,246,0,0" VerticalAlignment="Top" Width="45" Source="БАЛЬЗАМ.png"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="215,378,0,0" VerticalAlignment="Top" Width="71" Source="Коньяк.png"/>
+        <Image HorizontalAlignment="Left" Height="809" Margin="215,-331,-124.4,0" VerticalAlignment="Top" Width="983" Source="Коньяк.png"/>
         <Image HorizontalAlignment="Left" Height="101" Margin="205,508,0,0" VerticalAlignment="Top" Width="103" Source="wine_PNG99057.png"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="797,116,0,0" VerticalAlignment="Top" Width="45" Source="vodka.png"/>
         <Image HorizontalAlignment="Left" Height="101" Margin="797,246,0,0" VerticalAlignment="Top" Width="45" Source="БАЛЬЗАМ.png"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="784,378,0,0" VerticalAlignment="Top" Width="71" Source="Коньяк.png"/>
-        <Image HorizontalAlignment="Left" Height="101" Margin="774,508,0,0" VerticalAlignment="Top" Width="104" Source="wine_PNG99057.png"/>
+        <Image HorizontalAlignment="Left" Height="856" Margin="278,-176,-159.4,0" VerticalAlignment="Top" Width="955" Source="wine_PNG99057.png"/>
 
     </Grid>
 </Window>

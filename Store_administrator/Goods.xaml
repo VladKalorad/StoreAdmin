@@ -32,14 +32,13 @@
         </Border>
         <Button Content="Обновить" HorizontalAlignment="Left" Margin="60,550,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="updateButton_Click"/>
         <Button Content="Удалить" HorizontalAlignment="Left" Margin="324,550,0,0" VerticalAlignment="Top" Width="223" Height="39" FontSize="20" Click="deleteButton_Click"/>
-        <Button Content="Сортировать по кол-во" HorizontalAlignment="Left" Margin="586,550,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_1"/>
-        <Button Content="Сортировать по цене" HorizontalAlignment="Left" Margin="845,550,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_6"/>
+        <Button Content="Сорт. по кол-во" HorizontalAlignment="Left" Margin="586,550,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_1"/>
+        <Button Content="Сорт. по цене" HorizontalAlignment="Left" Margin="845,550,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_6"/>
         <Button Content="Водка" HorizontalAlignment="Left" Margin="60,608,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_2"/>
         <Button Content="Коньяк" HorizontalAlignment="Left" Margin="324,608,0,0" VerticalAlignment="Top" Width="223" Height="39" FontSize="20" Click="Button_Click_3"/>
         <Button Content="Бальзам" HorizontalAlignment="Left" Margin="586,608,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_4"/>
         <Button Content="Вино" HorizontalAlignment="Left" Margin="845,608,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_5"/>
-        <Button Content="Товары на складе" HorizontalAlignment="Left" Margin="324,665,0,0" VerticalAlignment="Top" Width="223" Height="39" FontSize="20"/>
-        <Button Content="Отчет" HorizontalAlignment="Left" Margin="586,665,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20"/>
+        <Button Content="Склад" HorizontalAlignment="Left" Margin="324,665,0,0" VerticalAlignment="Top" Width="223" Height="39" FontSize="20" Click="Button_Click_11"/>
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="60,665,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_10"/>
         <Border x:Name="s1_Copy1" MinWidth="300" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="486" HorizontalAlignment="Left" Width="368" Margin="1131,11,0,0">
             <Border.Effect>
@@ -56,5 +55,6 @@
         <TextBox x:Name="textBoxManafacture" HorizontalAlignment="Left" Height="36" Margin="1202,346,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите производителя" VerticalAlignment="Top" Width="222" FontSize="20"/>
         <TextBox x:Name="textBoxSearch" HorizontalAlignment="Left" Height="36" Margin="1202,104,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите название" VerticalAlignment="Top" Width="222" FontSize="20" TextChanged="TextBox_TextChanged"/>
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,205,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
+        <Button Content="Нет в наличии" HorizontalAlignment="Left" Margin="586,665,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_13"/>
     </Grid>
 </Window>

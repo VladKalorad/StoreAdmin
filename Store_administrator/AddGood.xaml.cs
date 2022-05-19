@@ -85,6 +85,13 @@ namespace Store_administrator
             var item = (ComboBoxItem)TypeList.SelectedValue;
             s = (string)item.Content;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Goods good = new Goods();
+            good.Show();
+            this.Close();
+        }
     }
 }
 

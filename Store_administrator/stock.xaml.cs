@@ -61,12 +61,28 @@ namespace Store_administrator
         }
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
-
+            string search = textBoxSearch.Text.Trim();
+            SqlConnection connection = null;
+            string sql = $"SELECT * FROM Stock WHERE Name LIKE '%{search}%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-
+            string proiz = textBoxManafacture.Text.Trim();
+            SqlConnection connection = null;
+            string sql = $"SELECT * FROM Stock WHERE Manufacturer LIKE '%{proiz}%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -75,6 +91,26 @@ namespace Store_administrator
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            Menu obj = new Menu();
+            obj.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string category = textBoxCategory.Text.Trim();
+            SqlConnection connection = null;
+            string sql = $"SELECT * FROM Stock WHERE Type LIKE '%{category}%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Menu obj = new Menu();
             obj.Show();

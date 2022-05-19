@@ -12,7 +12,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="553" HorizontalAlignment="Left" Width="946" Margin="223,138,0,0">
+        <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="587" HorizontalAlignment="Left" Width="946" Margin="223,138,0,0">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
@@ -23,7 +23,7 @@
         <TextBox x:Name="textBoxAmount" HorizontalAlignment="Left" Height="50" Margin="406,408,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите кол-во" VerticalAlignment="Top" Width="259" FontSize="20" TextChanged="textBoxManafacture_Copy1_TextChanged"/>
         <TextBox x:Name="textBoxPrice" HorizontalAlignment="Left" Height="49" Margin="723,287,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите цена" VerticalAlignment="Top" Width="259" FontSize="20" Text="{Binding Path=AddGood, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
         <TextBox x:Name="textBoxManafacture" HorizontalAlignment="Left" Height="49" Margin="723,408,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите производителя" VerticalAlignment="Top" Width="259" FontSize="20"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="578,624,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click_8"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="406,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click_8"/>
         <Label Content="Цена:" HorizontalAlignment="Left" Margin="724,240,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
         <Label Content="Объем:" HorizontalAlignment="Left" Margin="408,500,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="80"/>
         <Label Content="Производитель:" HorizontalAlignment="Left" Margin="724,371,0,0" VerticalAlignment="Top" Height="32" Width="172" FontSize="20" FontWeight="Bold"/>
@@ -46,5 +46,6 @@
             <ComboBoxItem Content="Бальзам"/>
             <ComboBoxItem Content="Вино"/>
         </ComboBox>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="761,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
     </Grid>
 </Window>

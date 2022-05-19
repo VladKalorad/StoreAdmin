@@ -44,3 +44,5 @@ E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\New_adm
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\New_adm.baml
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\stock.g.cs
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\stock.baml
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Bid.g.cs
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Bid.baml

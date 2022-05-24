@@ -20,13 +20,40 @@
         <Button Content="Коньяк" HorizontalAlignment="Left" Margin="337,391,0,0" VerticalAlignment="Top" Width="411" Height="87" FontSize="36" Click="Button_Click" FontFamily="Franklin Gothic Book"/>
         <Button Content="Вино" HorizontalAlignment="Left" Margin="337,522,0,0" VerticalAlignment="Top" Width="411" Height="87" FontSize="36" FontFamily="Franklin Gothic Book"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="228,116,0,0" VerticalAlignment="Top" Width="45" Source="vodka.png"/>
-        <Image HorizontalAlignment="Left" Height="101" Margin="228,246,0,0" VerticalAlignment="Top" Width="45" Source="БАЛЬЗАМ.png"/>
-        <Image HorizontalAlignment="Left" Height="809" Margin="215,-331,-124.4,0" VerticalAlignment="Top" Width="983" Source="Коньяк.png"/>
+        <Image HorizontalAlignment="Left" Height="721" Margin="1642,278,-1503.4,-308.6" VerticalAlignment="Top" Width="935" Source="БАЛЬЗАМ.png"/>
+        <Image HorizontalAlignment="Left" Height="669" Margin="1565,-335,-1371.4,0" VerticalAlignment="Top" Width="880" Source="Коньяк.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.998"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <Image HorizontalAlignment="Left" Height="101" Margin="205,508,0,0" VerticalAlignment="Top" Width="103" Source="wine_PNG99057.png"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="797,116,0,0" VerticalAlignment="Top" Width="45" Source="vodka.png"/>
+        <Image HorizontalAlignment="Left" Height="693" Margin="1312,-52,-731.4,0" VerticalAlignment="Top" Width="493" Source="vodka.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.99" ScaleX="1.01"/>
+                    <SkewTransform AngleY="0.004"/>
+                    <RotateTransform Angle="89.77"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <Image HorizontalAlignment="Left" Height="101" Margin="797,246,0,0" VerticalAlignment="Top" Width="45" Source="БАЛЬЗАМ.png"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="784,378,0,0" VerticalAlignment="Top" Width="71" Source="Коньяк.png"/>
-        <Image HorizontalAlignment="Left" Height="856" Margin="278,-176,-159.4,0" VerticalAlignment="Top" Width="955" Source="wine_PNG99057.png"/>
+        <Image HorizontalAlignment="Left" Height="959" Margin="1819,-192,-1725.4,-76.6" VerticalAlignment="Top" Width="980" Source="wine_PNG99057.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.99" ScaleX="1.01"/>
+                    <SkewTransform AngleX="0.005"/>
+                    <RotateTransform Angle="-90.27"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
     </Grid>
 </Window>

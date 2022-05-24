@@ -38,7 +38,7 @@ namespace Store_administrator
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@name", SqlDbType.NVarChar, 50, "Name"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@capacity", SqlDbType.NVarChar, 50, "Capacity"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@amount", SqlDbType.Int, 0, "Amount"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.Float, 0, "Price"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.NVarChar, 50, "Price"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@manufacturer", SqlDbType.NVarChar, 50, "Manufacturer"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar, 50, "Type"));
 
@@ -112,9 +112,87 @@ namespace Store_administrator
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Menu obj = new Menu();
+            Add_Bid obj = new Add_Bid();
             obj.Show();
             this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SqlConnection connection = null;
+            string sql = "SELECT * FROM Stock ORDER BY Amount";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
+        }
+        private void UpdateDB()
+        {
+            SqlCommandBuilder comandbuilder = new SqlCommandBuilder(adapter);
+            adapter.Update(goodsTable);
+        }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            DataRowView dataRow = (DataRowView)goodsGrid.SelectedItem;
+            var name = Convert.ToString(dataRow.Row.ItemArray[1]);
+            //var test = (dynamic)(dataRow.Row.ItemArray[2]);
+            //var capacity = float.Parse(test);
+
+            var capacity = Convert.ToString(dataRow.Row.ItemArray[2]);
+            var amount = Convert.ToInt32(dataRow.Row.ItemArray[3]);
+            //var test = (dynamic)(dataRow.Row.ItemArray[4]);
+            var price = Convert.ToString(dataRow.Row.ItemArray[3]);
+            var proiz = Convert.ToString(dataRow.Row.ItemArray[5]);
+            var type = Convert.ToString(dataRow.Row.ItemArray[6]);
+            DataRowView row = (DataRowView)goodsGrid.SelectedItem;
+            row.Row.Delete();
+            try
+            {
+                SqlConnection connection = null;
+                if (goodsGrid.SelectedItems != null)
+                {
+                    for (int i = 0; i < goodsGrid.SelectedItems.Count; i++)
+                    {
+                        DataRowView datarowView = goodsGrid.SelectedItems[i] as DataRowView;
+                        if (datarowView != null)
+                        {
+                            dataRow.Delete();
+                        }
+                    }
+                }
+                UpdateDB();
+
+
+                string query2 = $"INSERT INTO Goods(Name, Capacity, Amount, Price, Manufacturer, Type) values('{name}','{capacity}','{amount}','{price}','{proiz}','{type}')";
+                connection = new SqlConnection(connectionString);
+               
+                SqlCommand command2 = new SqlCommand(query2, connection);
+                connection.Open();
+
+                if (command2.ExecuteNonQuery()==1)
+                {
+                    MessageBox.Show("Товар успешно перенесен", "Успех!");
+                    Goods good = new Goods();
+                    good.Show();
+                    this.Close();
+                }
+                else { MessageBox.Show("Товар "); }
+                connection.Close();
+
+                //sqlite_conn.Open();
+                //sqlite_cmd.CommandText = $"DELETE FROM Storage WHERE Название = '{name}';";
+                //sqlite_cmd.ExecuteNonQuery();
+                //sqlite_cmd.CommandText = $"INSERT INTO Products (Название,Категория,Производитель,Колличество) VALUES ('{name}','{category}','{producer}','{count}');";
+                //sqlite_cmd.ExecuteNonQuery();
+                //sqlite_conn.Close();
+                Window_Loaded(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

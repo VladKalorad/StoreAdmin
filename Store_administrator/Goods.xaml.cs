@@ -48,7 +48,7 @@ namespace Store_administrator
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@name", SqlDbType.NVarChar, 50, "Name"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@capacity", SqlDbType.NVarChar, 50, "Capacity"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@amount", SqlDbType.Int, 0, "Amount"));
-                adapter.InsertCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.Float, 0, "Price"));
+                adapter.InsertCommand.Parameters.Add(new SqlParameter("@price", SqlDbType.NVarChar, 50, "Price"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@manufacturer", SqlDbType.NVarChar, 50, "Manufacturer"));
                 adapter.InsertCommand.Parameters.Add(new SqlParameter("@type", SqlDbType.NVarChar, 50, "Type"));
   
@@ -80,7 +80,15 @@ namespace Store_administrator
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            string category = textBoxCategory.Text.Trim();
+            SqlConnection connection = null;
+            string sql = $"SELECT * FROM Goods WHERE Type LIKE '%{category}%'";
+            connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand(sql, connection);
+            adapter = new SqlDataAdapter(command);
+            connection.Open();
+            goodsTable.Clear();
+            adapter.Fill(goodsTable);
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)

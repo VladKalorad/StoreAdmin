@@ -84,6 +84,9 @@
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Add_Bid.xaml.cs">
+      <DependentUpon>Add_Bid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Bid.xaml.cs">
       <DependentUpon>Bid.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddGood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Bid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,18 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\logo3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="vodka.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="БАЛЬЗАМ.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Коньяк.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="wine_PNG99057.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />

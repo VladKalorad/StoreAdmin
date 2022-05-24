@@ -24,7 +24,6 @@ namespace Store_administrator
     public partial class AddGood : Window
     {
         string connectionString;
-        SqlDataAdapter adapter;
         public string s;
         public string obm;
         public AddGood()
@@ -44,8 +43,8 @@ namespace Store_administrator
             
             var amount = Convert.ToInt32(textBoxAmount.Text);
             var manafacture = textBoxManafacture.Text;
-            var price = float.Parse(textBoxPrice.Text, CultureInfo.InvariantCulture);
-            var type = s;
+            var price = textBoxPrice.Text;
+            var type = textBoxType.Text;
             var name = textBoxName.Text;
             var value = obm;
 
@@ -80,17 +79,16 @@ namespace Store_administrator
             obm = (string)item.Content;
         }
 
-        private void TypeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var item = (ComboBoxItem)TypeList.SelectedValue;
-            s = (string)item.Content;
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Goods good = new Goods();
             good.Show();
             this.Close();
+        }
+
+        private void textBoxType_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

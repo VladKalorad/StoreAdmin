@@ -40,12 +40,7 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="5"/>
         </ComboBox>
-        <ComboBox x:Name="TypeList" HorizontalAlignment="Left" Margin="724,565,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="TypeList_SelectionChanged" FontSize="18" >
-            <ComboBoxItem Content="Водка"/>
-            <ComboBoxItem Content="Коньяк"/>
-            <ComboBoxItem Content="Бальзам"/>
-            <ComboBoxItem Content="Вино"/>
-        </ComboBox>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="761,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
+        <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="49" Margin="724,546,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите тип" VerticalAlignment="Top" Width="259" FontSize="20" TextChanged="textBoxType_TextChanged"/>
     </Grid>
 </Window>

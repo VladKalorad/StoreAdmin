@@ -28,9 +28,9 @@
             </Border.Effect>
 
         </Border>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="1037,418,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_8" Background="#FFA51919" BorderBrush="#FFA51919"/>
-        <Button Content="Закрыть заявку" HorizontalAlignment="Left" Margin="1037,337,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_8"/>
-        <Button Content="Сделать отчет" HorizontalAlignment="Left" Margin="1037,256,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_8"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="1037,418,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_1" Background="#FFA51919" BorderBrush="#FFA51919"/>
+        <Button Content="Закрыть заявку" HorizontalAlignment="Left" Margin="1037,337,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_2"/>
+        <Button Content="Сделать отчет" HorizontalAlignment="Left" Margin="1037,256,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_3"/>
         <Button Content="Добавить заявку" HorizontalAlignment="Left" Margin="1037,178,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click"/>
 
     </Grid>

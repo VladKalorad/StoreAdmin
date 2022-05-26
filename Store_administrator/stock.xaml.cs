@@ -139,7 +139,6 @@ namespace Store_administrator
             var name = Convert.ToString(dataRow.Row.ItemArray[1]);
             //var test = (dynamic)(dataRow.Row.ItemArray[2]);
             //var capacity = float.Parse(test);
-
             var capacity = Convert.ToString(dataRow.Row.ItemArray[2]);
             var amount = Convert.ToInt32(dataRow.Row.ItemArray[3]);
             //var test = (dynamic)(dataRow.Row.ItemArray[4]);

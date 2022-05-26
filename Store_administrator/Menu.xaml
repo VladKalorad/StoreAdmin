@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
         mc:Ignorable="d"
-  Title="Menu" Height="720" Width="1080" Background="#ffdadada" WindowStartupLocation="CenterScreen">
+  Title="Menu" Height="720" Width="1080" Background="#ffdadada" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid >
         <Menu Background="Transparent"/>
         <Border x:Name="s1" MinWidth="800" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="500" CornerRadius="25" Height="544" HorizontalAlignment="Left" Width="739" Margin="163,44,0,0">

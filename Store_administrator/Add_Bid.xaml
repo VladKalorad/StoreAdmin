@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Store_administrator"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.Add_Bid"
         mc:Ignorable="d"
-        Title="Add_Bid" Height="1000" Width="1900" Background="#ffdadada" >
+        Title="Add_Bid" Height="1000" Width="1900" Background="#ffdadada" WindowState="Maximized" >
     <Grid>
 
         <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="489" HorizontalAlignment="Left" Width="946" Margin="330,156,0,0">
@@ -33,13 +33,8 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="5"/>
         </ComboBox>
-        <ComboBox x:Name="TypeList" HorizontalAlignment="Left" Margin="831,463,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="TypeList_SelectionChanged" FontSize="18" >
-            <ComboBoxItem Content="Водка"/>
-            <ComboBoxItem Content="Коньяк"/>
-            <ComboBoxItem Content="Бальзам"/>
-            <ComboBoxItem Content="Вино"/>
-        </ComboBox>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="868,555,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
+        <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="50" Margin="831,447,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите тип" VerticalAlignment="Top" Width="259" FontSize="20" />
 
     </Grid>
 </Window>

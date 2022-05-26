@@ -13,6 +13,7 @@
             </Border.Effect>
             <ScrollViewer RenderTransformOrigin="0.56,0.501"/>
         </Border>
+        <Label Content="Справочная система для программного обеспечения &#xD;&#xA;       &quot;AРM администратора магазина «Кристалл»&quot;&#xD;&#xA;" HorizontalAlignment="Left" Margin="498,80,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="70" Width="540"/>
 
     </Grid>
 </Window>

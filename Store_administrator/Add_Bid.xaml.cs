@@ -38,10 +38,10 @@ namespace Store_administrator
         {
             SqlConnection connection = null;
 
-            var amount = Convert.ToInt32(textBoxAmount.Text);
-            var type = s;
-            var name = textBoxName.Text;
-            var value = obm;
+            var amount = Convert.ToInt32(textBoxAmount.Text) + "     ";
+            var type = textBoxType + "       ";
+            var name = textBoxName.Text + "   ";
+            var value = obm + "       ";
 
             string query = $"INSERT INTO Bid(Name, Amount, Type, Capacity) values('{name}','{amount}','{type}','{value}')";
 
@@ -67,11 +67,6 @@ namespace Store_administrator
             obm = (string)item.Content;
         }
 
-        private void TypeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var item = (ComboBoxItem)TypeList.SelectedValue;
-            s = (string)item.Content;
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -48,3 +48,4 @@ E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Bid.g.c
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Bid.baml
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Add_Bid.g.cs
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Add_Bid.baml
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Store_administrator.csproj.ResolveComReference.cache

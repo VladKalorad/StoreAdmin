@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+        xmlns:p = "clr-namespace:Store_administrator.Properties"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.New_adm"
         mc:Ignorable="d"
         Title="New_adm" Height="700" Width="1400" Background="#ffdadada" WindowState="Maximized">
@@ -15,12 +16,12 @@
             </Border.Effect>
         </Border>
 
-        <TextBox x:Name="textBoxLogin" HorizontalAlignment="Left" Height="49" Margin="432,322,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите логин" VerticalAlignment="Top" Width="259" FontSize="20"/>
-        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Height="49" Margin="749,322,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите пароль" VerticalAlignment="Top" Width="259" FontSize="20" Text="{Binding AddGood, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="590,436,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click"/>
-        <Label Content="Пароль:" HorizontalAlignment="Left" Margin="750,274,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Добавление администратора:" HorizontalAlignment="Left" Margin="533,190,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label Content="Логин:" HorizontalAlignment="Left" Margin="432,274,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxLogin" HorizontalAlignment="Left" Height="49" Margin="432,322,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_login}" VerticalAlignment="Top" Width="259" FontSize="20"/>
+        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Height="49" Margin="749,322,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_password}" VerticalAlignment="Top" Width="259" FontSize="20" Text="{Binding AddGood, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="{x:Static p:Resources.Add}" HorizontalAlignment="Left" Margin="590,436,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click"/>
+        <Label Content="{x:Static p:Resources.Password}" HorizontalAlignment="Left" Margin="750,274,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
+        <Label Content="{x:Static p:Resources.Adding_an_administrator}" HorizontalAlignment="Left" Margin="533,190,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="{x:Static p:Resources.Login}" HorizontalAlignment="Left" Margin="432,274,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </Window>

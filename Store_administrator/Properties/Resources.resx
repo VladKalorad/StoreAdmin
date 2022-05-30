@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,135 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Add Administrator" xml:space="preserve">
+    <value>Add Administrator</value>
+  </data>
+  <data name="Adding_an_administrator" xml:space="preserve">
+    <value>Adding an administrator</value>
+  </data>
+  <data name="Add_bid" xml:space="preserve">
+    <value>Add bid</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Application_Formation" xml:space="preserve">
+    <value>Application Formation</value>
+  </data>
+  <data name="Bids" xml:space="preserve">
+    <value>Bids</value>
+  </data>
+  <data name="ButtonBackStock" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BuyGoodStock" xml:space="preserve">
+    <value>Buy goods</value>
+  </data>
+  <data name="Capacity" xml:space="preserve">
+    <value>Capacity</value>
+  </data>
+  <data name="Close_bid" xml:space="preserve">
+    <value>Close bid</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Enter_category" xml:space="preserve">
+    <value>Enter category</value>
+  </data>
+  <data name="Enter_login" xml:space="preserve">
+    <value>Enter login</value>
+  </data>
+  <data name="Enter_Manufacturer" xml:space="preserve">
+    <value>Enter Manufacturer</value>
+  </data>
+  <data name="Enter_password" xml:space="preserve">
+    <value>Enter password</value>
+  </data>
+  <data name="Enter_price" xml:space="preserve">
+    <value>Enter price</value>
+  </data>
+  <data name="Enter_Quantity" xml:space="preserve">
+    <value>Enter Quantity</value>
+  </data>
+  <data name="Enter_the_name" xml:space="preserve">
+    <value>Enter the name</value>
+  </data>
+  <data name="Goods" xml:space="preserve">
+    <value>Goods</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Make_report" xml:space="preserve">
+    <value>Make a report</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MoveGoodStock" xml:space="preserve">
+    <value>Transfer goods</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Not_available" xml:space="preserve">
+    <value>Not available</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Seacrh" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Seacrh2" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Seacrh3" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search_by_category" xml:space="preserve">
+    <value>Search by category</value>
+  </data>
+  <data name="Search_by_manafacture" xml:space="preserve">
+    <value>Search by manafacture</value>
+  </data>
+  <data name="Search_by_name" xml:space="preserve">
+    <value>Search by name</value>
+  </data>
+  <data name="SortAmountStock" xml:space="preserve">
+    <value>Sort by quantity</value>
+  </data>
+  <data name="Sort_by_price" xml:space="preserve">
+    <value>Sort by price</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="textBoxCategory" xml:space="preserve">
+    <value>Search by category</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
 </root>

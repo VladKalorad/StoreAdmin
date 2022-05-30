@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+         xmlns:p = "clr-namespace:Store_administrator.Properties"
         mc:Ignorable="d"
         Title="Addadm" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid>
@@ -14,8 +15,8 @@
             <DataGrid x:Name="goodsGrid" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Background="#FFEDEDED" FontSize="18" FontStyle="Italic" FontWeight="Bold" HorizontalGridLinesBrush="#FF080707" VerticalGridLinesBrush="#FF030303" Margin="0.4,0.4,-0.6,0" >
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Binding="{Binding Login}" Header="Логин" Width="540"/>
-                    <DataGridTextColumn Binding="{Binding Password}" Header="Пароль" Width="540"/>
+                    <DataGridTextColumn Binding="{Binding Login}" Header="{x:Static p:Resources.Login}" Width="540"/>
+                    <DataGridTextColumn Binding="{Binding Password}" Header="{x:Static p:Resources.Password}" Width="540"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
@@ -24,10 +25,10 @@
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
         </Border>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="141,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click"/>
-        <Button Content="Обновить" HorizontalAlignment="Left" Margin="408,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_1"/>
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="675,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_2"/>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="940,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_3" Background="#FF9F2424" BorderBrush="#FF9F2424"/>
+        <Button Content="{x:Static p:Resources.Add}" HorizontalAlignment="Left" Margin="141,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click"/>
+        <Button Content="{x:Static p:Resources.Update}" HorizontalAlignment="Left" Margin="408,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_1"/>
+        <Button Content="{x:Static p:Resources.Delete}" HorizontalAlignment="Left" Margin="675,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_2"/>
+        <Button Content="{x:Static p:Resources.ButtonBackStock}" HorizontalAlignment="Left" Margin="940,610,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_3" Background="#FF9F2424" BorderBrush="#FF9F2424"/>
 
     </Grid>
 </Window>

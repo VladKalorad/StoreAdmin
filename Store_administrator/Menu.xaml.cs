@@ -58,5 +58,26 @@ namespace Store_administrator
             obj.Show();
             this.Close();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+            Menu obj = new Menu();
+            obj.Show();
+            this.Close();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ru-RU");
+            Menu obj = new Menu();
+            obj.Show();
+            this.Close();
+        }
     }
 }

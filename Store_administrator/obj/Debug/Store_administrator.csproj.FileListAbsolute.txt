@@ -49,3 +49,11 @@ E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Bid.bam
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Add_Bid.g.cs
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Add_Bid.baml
 E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Store_administrator.csproj.ResolveComReference.cache
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\about_prog.g.cs
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\about_prog.baml
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\en\Store_administrator.resources.dll
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Store_administrator.Properties.Resources.en.resources
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\en\Store_administrator.resources.dll
+E:\Store_administrator\Store_administrator\Store_administrator\bin\Debug\ru-RU\Store_administrator.resources.dll
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\Store_administrator.Properties.Resources.ru-RU.resources
+E:\Store_administrator\Store_administrator\Store_administrator\obj\Debug\ru-RU\Store_administrator.resources.dll

@@ -39,7 +39,7 @@ namespace Store_administrator
             SqlConnection connection = null;
 
             var amount = Convert.ToInt32(textBoxAmount.Text) + "     ";
-            var type = textBoxType + "       ";
+            var type = textBoxType.Text + "       ";
             var name = textBoxName.Text + "   ";
             var value = obm + "       ";
 

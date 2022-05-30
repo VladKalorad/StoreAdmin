@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+         xmlns:p = "clr-namespace:Store_administrator.Properties"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.AddGood"
         mc:Ignorable="d"
         Title="AddGood" Height="1000" Width="1900" Background="#ffdadada" WindowStartupLocation="Manual" WindowState="Maximized" >
@@ -16,19 +17,19 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <Label Content="Название:" Margin="0,92.4,492.2,393.4" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Width="259"/>
+            <Label Content="{x:Static p:Resources.Name}" Margin="0,92.4,492.2,393.4" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Width="259"/>
         </Border>
 
-        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="49" Margin="406,287,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите название" VerticalAlignment="Top" Width="259" FontSize="20"/>
-        <TextBox x:Name="textBoxAmount" HorizontalAlignment="Left" Height="50" Margin="406,408,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите кол-во" VerticalAlignment="Top" Width="259" FontSize="20" TextChanged="textBoxManafacture_Copy1_TextChanged"/>
-        <TextBox x:Name="textBoxPrice" HorizontalAlignment="Left" Height="49" Margin="723,287,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите цена" VerticalAlignment="Top" Width="259" FontSize="20" Text="{Binding Path=AddGood, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
-        <TextBox x:Name="textBoxManafacture" HorizontalAlignment="Left" Height="49" Margin="723,408,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите производителя" VerticalAlignment="Top" Width="259" FontSize="20"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="406,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click_8"/>
-        <Label Content="Цена:" HorizontalAlignment="Left" Margin="724,240,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Объем:" HorizontalAlignment="Left" Margin="408,500,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="80"/>
-        <Label Content="Производитель:" HorizontalAlignment="Left" Margin="724,371,0,0" VerticalAlignment="Top" Height="32" Width="172" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Количество:" HorizontalAlignment="Left" Margin="407,369,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="128"/>
-        <Label Content="Тип:" HorizontalAlignment="Left" Margin="724,498,0,0" VerticalAlignment="Top" Height="34" Width="62" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="49" Margin="406,287,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_the_name}" VerticalAlignment="Top" Width="259" FontSize="20"/>
+        <TextBox x:Name="textBoxAmount" HorizontalAlignment="Left" Height="50" Margin="406,408,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_Quantity}" VerticalAlignment="Top" Width="259" FontSize="20" TextChanged="textBoxManafacture_Copy1_TextChanged"/>
+        <TextBox x:Name="textBoxPrice" HorizontalAlignment="Left" Height="49" Margin="723,287,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_price}" VerticalAlignment="Top" Width="259" FontSize="20" Text="{Binding Path=AddGood, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,StringFormat=N2}"/>
+        <TextBox x:Name="textBoxManafacture" HorizontalAlignment="Left" Height="49" Margin="723,408,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_Manufacturer}" VerticalAlignment="Top" Width="259" FontSize="20"/>
+        <Button Content="{x:Static p:Resources.Add}" HorizontalAlignment="Left" Margin="406,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click_8"/>
+        <Label Content="{x:Static p:Resources.Price}" HorizontalAlignment="Left" Margin="724,240,0,0" VerticalAlignment="Top" Height="33" Width="124" FontSize="20" FontWeight="Bold"/>
+        <Label Content="{x:Static p:Resources.Capacity}" HorizontalAlignment="Left" Margin="408,500,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="99"/>
+        <Label Content="{x:Static p:Resources.Manufacturer}" HorizontalAlignment="Left" Margin="724,371,0,0" VerticalAlignment="Top" Height="32" Width="172" FontSize="20" FontWeight="Bold"/>
+        <Label Content="{x:Static p:Resources.Amount}" HorizontalAlignment="Left" Margin="407,369,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="128"/>
+        <Label Content="{x:Static p:Resources.Type}" HorizontalAlignment="Left" Margin="724,498,0,0" VerticalAlignment="Top" Height="34" Width="62" FontSize="20" FontWeight="Bold"/>
         <Label Content="Добавление товара:" HorizontalAlignment="Left" Margin="554,156,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <ComboBox Name="capacityList" HorizontalAlignment="Left" Margin="406,562,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="capacityList_SelectionChanged" FontSize="18" >
             <ComboBoxItem Content="0.3"/>
@@ -40,7 +41,7 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="5"/>
         </ComboBox>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="761,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
-        <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="49" Margin="724,546,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите тип" VerticalAlignment="Top" Width="259" FontSize="20" TextChanged="textBoxType_TextChanged"/>
+        <Button Content="{x:Static p:Resources.ButtonBackStock}" HorizontalAlignment="Left" Margin="761,659,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
+        <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="49" Margin="724,546,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_category}" VerticalAlignment="Top" Width="259" FontSize="20" TextChanged="textBoxType_TextChanged"/>
     </Grid>
 </Window>

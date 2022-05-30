@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+        xmlns:p = "clr-namespace:Store_administrator.Properties"
         mc:Ignorable="d"
   Title="Menu" Height="720" Width="1080" Background="#ffdadada" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid >
@@ -12,14 +13,16 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <Label Content="Меню" FontSize="48" FontFamily="Agency FB" FontWeight="Bold" Margin="295.4,23.4,320.6,440.6"/>
+            <Label Content="{x:Static p:Resources.Menu}" FontSize="48" FontFamily="Agency FB" FontWeight="Bold" Margin="295.4,23.4,320.6,440.6"/>
 
         </Border>
-        <Button Content="Добавить администратора" HorizontalAlignment="Left" Margin="377,324,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_1"/>
-        <Button Content="Справка" HorizontalAlignment="Left" Margin="377,478,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_2"/>
-        <Button Content="Товары" HorizontalAlignment="Left" Margin="377,173,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click"/>
-        <Button Content="Склад" HorizontalAlignment="Left" Margin="377,249,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_3"/>
-        <Button Content="Заявки" HorizontalAlignment="Left" Margin="377,401,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_4"/>
+        <Button Content="{x:Static p:Resources.Add_Administrator}" HorizontalAlignment="Left" Margin="377,324,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_1"/>
+        <Button Content="{x:Static p:Resources.Info}" HorizontalAlignment="Left" Margin="377,478,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_2"/>
+        <Button Content="{x:Static p:Resources.Goods}" HorizontalAlignment="Left" Margin="377,173,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click"/>
+        <Button Content="{x:Static p:Resources.Stock}" HorizontalAlignment="Left" Margin="377,249,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_3"/>
+        <Button Content="{x:Static p:Resources.Bids}" HorizontalAlignment="Left" Margin="377,401,0,0" VerticalAlignment="Top" Width="341" Height="47" FontSize="20" Click="Button_Click_4"/>
+        <Button Content="Русский" HorizontalAlignment="Left" Margin="181,101,0,0" VerticalAlignment="Top" Width="115" Height="34" FontSize="20" Click="Button_Click_6" Background="White" Foreground="#DD000000" BorderBrush="#FFA8A8A8"/>
+        <Button  Content="English" HorizontalAlignment="Left" Margin="181,61,0,0" VerticalAlignment="Top" Width="115" Height="34" FontSize="20" Click="Button_Click_5" Background="White" Foreground="#DD000000" BorderBrush="#FFCBC9C9"/>
 
     </Grid>
 </Window>

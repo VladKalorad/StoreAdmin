@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+        xmlns:p = "clr-namespace:Store_administrator.Properties"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.stock"
         mc:Ignorable="d"
         Title="stock" Height="1000" Width="1900" Background="#ffdadada" Loaded="Window_Loaded" WindowState="Maximized">
@@ -16,12 +17,12 @@
             <DataGrid x:Name="goodsGrid" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Background="#FFEDEDED" FontSize="18" FontStyle="Italic" FontWeight="Bold" HorizontalGridLinesBrush="#FF080707" VerticalGridLinesBrush="#FF030303" Margin="0.4,0.4,-0.6,0" CanUserAddRows="False" IsReadOnly="True">
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="240"/>
-                    <DataGridTextColumn Binding="{Binding Capacity}" Header="Объем" Width="120"/>
-                    <DataGridTextColumn Binding="{Binding Amount}" Header="Количество" Width="150"/>
-                    <DataGridTextColumn Binding="{Binding Price}" Header="Цена" Width="140"/>
-                    <DataGridTextColumn Binding="{Binding Manufacturer}" Header="Производитель" Width="250"/>
-                    <DataGridTextColumn Binding="{Binding Type}" Header="Тип" Width="120"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="{x:Static p:Resources.Name}" Width="240"/>
+                    <DataGridTextColumn Binding="{Binding Capacity}" Header="{x:Static p:Resources.Capacity}" Width="120"/>
+                    <DataGridTextColumn Binding="{Binding Amount}" Header="{x:Static p:Resources.Amount}" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Price}" Header="{x:Static p:Resources.Price}" Width="140"/>
+                    <DataGridTextColumn Binding="{Binding Manufacturer}" Header="{x:Static p:Resources.Manufacturer}" Width="250"/>
+                    <DataGridTextColumn Binding="{Binding Type}" Header="{x:Static p:Resources.Type}" Width="120"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
@@ -31,10 +32,10 @@
             </Border.Effect>
 
         </Border>
-        <Label Content="Поиск по названию" HorizontalAlignment="Left" Margin="1197,84,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
+        <Label x:Name="Search_by_name" Content="{x:Static p:Resources.Search_by_name}" HorizontalAlignment="Left" Margin="1197,84,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
 
-        <Label Content="Поиск по производителю" HorizontalAlignment="Left" Margin="1198,321,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,446,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_9">
+        <Label x:Name="Search_by_manafacture" Content="{x:Static p:Resources.Search_by_manafacture}" HorizontalAlignment="Left" Margin="1198,321,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
+        <Button   Content="{x:Static p:Resources.Seacrh}" HorizontalAlignment="Left" Margin="1202,446,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_9">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF7239D9" Offset="0"/>
@@ -42,7 +43,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,207,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_8" BorderBrush="#FF673AB7">
+        <Button x:Name="Seacrh" Content="{x:Static p:Resources.Seacrh}" HorizontalAlignment="Left" Margin="1202,207,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click_8" BorderBrush="#FF673AB7">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FF7239D9" Offset="0.005"/>
@@ -51,14 +52,14 @@
             </Button.Background>
         </Button>
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,232,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
-        <TextBox x:Name="textBoxManafacture" HorizontalAlignment="Left" Height="36" Margin="1202,379,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите производителя" VerticalAlignment="Top" Width="222" FontSize="20"/>
-        <TextBox x:Name="textBoxSearch" HorizontalAlignment="Left" Height="36" Margin="1202,137,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите название" VerticalAlignment="Top" Width="222" FontSize="20"/>
+        <TextBox x:Name="textBoxManafacture" HorizontalAlignment="Left" Height="36" Margin="1202,379,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_Manufacturer}" VerticalAlignment="Top" Width="222" FontSize="20"/>
+        <TextBox x:Name="textBoxSearch" HorizontalAlignment="Left" Height="36" Margin="1202,137,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_the_name}" VerticalAlignment="Top" Width="222" FontSize="20"/>
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,238,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,485,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
         <Label Content="-----------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="1127,490,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="72" Width="376" Height="59"/>
-        <Label Content="Поиск по категории" HorizontalAlignment="Left" Margin="1201,578,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
-        <TextBox x:Name="textBoxCategory" HorizontalAlignment="Left" Height="36" Margin="1204,636,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите категорию" VerticalAlignment="Top" Width="222" FontSize="20"/>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="1202,705,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click">
+        <Label x:Name="Sear" Content="{x:Static p:Resources.textBoxCategory}" HorizontalAlignment="Left" Margin="1201,578,0,0" VerticalAlignment="Top" FontFamily="Franklin Gothic Medium" FontSize="20"/>
+        <TextBox x:Name="textBoxCategory" HorizontalAlignment="Left" Height="36" Margin="1204,636,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_category}" VerticalAlignment="Top" Width="222" FontSize="20"/>
+        <Button   Content="{x:Static p:Resources.Seacrh}" HorizontalAlignment="Left" Margin="1202,705,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF7239D9" Offset="0"/>
@@ -72,11 +73,11 @@
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
         </Border>
-        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="24" Background="#FFDC4D4D" Margin="855,578,0,0" Click="Button_Click_7" BorderBrush="#FFEE3333" RenderTransformOrigin="-0.669,2.174"/>
-        <Label Content="Склад" HorizontalAlignment="Left" Margin="1278,10,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Height="51" Width="79"/>
-        <Button Content="Перенести товар" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="22" Background="#FF673AB7" Margin="69,578,0,0" Click="Button_Click_3" BorderBrush="#FF6D46B3"/>
-        <Button Content="Закупить товар" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="22" Background="#FF673AB7" Margin="327,578,0,0" Click="Button_Click_1" BorderBrush="#FF6D46B3"/>
-        <Button Content="Сорт. по кол-ву" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="22" Background="#FF673AB7" Margin="595,578,0,0" Click="Button_Click_2" BorderBrush="#FF6D46B3"/>
+        <Button x:Name="ButtonBackStock" Content="{x:Static p:Resources.ButtonBackStock}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="24" Background="#FFDC4D4D" Margin="855,578,0,0" Click="Button_Click_7" BorderBrush="#FFEE3333" RenderTransformOrigin="-0.669,2.174"/>
+        <Label x:Name="TitleStock" Content="{x:Static p:Resources.Stock}" HorizontalAlignment="Left" Margin="1278,10,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Height="51" Width="79"/>
+        <Button x:Name="MoveGoodStock" Content="{x:Static p:Resources.MoveGoodStock}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="22" Background="#FF673AB7" Margin="69,578,0,0" Click="Button_Click_3" BorderBrush="#FF6D46B3"/>
+        <Button x:Name="BuyGoodStock" Content="{x:Static p:Resources.BuyGoodStock}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="22" Background="#FF673AB7" Margin="327,578,0,0" Click="Button_Click_1" BorderBrush="#FF6D46B3"/>
+        <Button  x:Name="SortAmountStock" Content="{x:Static p:Resources.SortAmountStock}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="47" FontSize="22" Background="#FF673AB7" Margin="595,578,0,0" Click="Button_Click_2" BorderBrush="#FF6D46B3"/>
 
     </Grid>
 </Window>

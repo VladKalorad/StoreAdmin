@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+        xmlns:p = "clr-namespace:Store_administrator.Properties"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.Bid"
         mc:Ignorable="d"
         Title="Bid" Height="1000" Width="1900" Background="#ffdadada" WindowState="Maximized"  Loaded="Window_Loaded">
@@ -15,10 +16,10 @@
             </Border.Effect>
             <DataGrid x:Name="goodsGrid" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" Background="#FFEDEDED" FontSize="18" FontStyle="Italic" FontWeight="Bold" HorizontalGridLinesBrush="#FF080707" VerticalGridLinesBrush="#FF030303" Margin="0,0.4,-0.6,-0.4" HorizontalAlignment="Right" Width="725" CanUserAddRows="False" IsReadOnly="True" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="240"/>
-                    <DataGridTextColumn Binding="{Binding Capacity}" Header="Объем" Width="150"/>
-                    <DataGridTextColumn Binding="{Binding Amount}" Header="Количество" Width="150"/>
-                    <DataGridTextColumn Binding="{Binding Type}" Header="Тип товара" Width="220"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="{x:Static p:Resources.Name}" Width="240"/>
+                    <DataGridTextColumn Binding="{Binding Capacity}" Header="{x:Static p:Resources.Capacity}" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Amount}" Header="{x:Static p:Resources.Amount}" Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Type}" Header="{x:Static p:Resources.Type}" Width="220"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
@@ -28,10 +29,10 @@
             </Border.Effect>
 
         </Border>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="1037,418,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_1" Background="#FFA51919" BorderBrush="#FFA51919"/>
-        <Button Content="Закрыть заявку" HorizontalAlignment="Left" Margin="1037,337,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_2"/>
-        <Button Content="Сделать отчет" HorizontalAlignment="Left" Margin="1037,256,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_3"/>
-        <Button Content="Добавить заявку" HorizontalAlignment="Left" Margin="1037,178,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click"/>
+        <Button Content="{x:Static p:Resources.ButtonBackStock}" HorizontalAlignment="Left" Margin="1037,418,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_1" Background="#FFA51919" BorderBrush="#FFA51919"/>
+        <Button Content="{x:Static p:Resources.Close_bid}" HorizontalAlignment="Left" Margin="1037,337,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_2"/>
+        <Button Content="{x:Static p:Resources.Make_report}" HorizontalAlignment="Left" Margin="1037,256,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_3"/>
+        <Button Content="{x:Static p:Resources.Add_bid}" HorizontalAlignment="Left" Margin="1037,178,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click"/>
 
     </Grid>
 </Window>

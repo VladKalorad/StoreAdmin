@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+         xmlns:p = "clr-namespace:Store_administrator.Properties"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Store_administrator.Add_Bid"
         mc:Ignorable="d"
         Title="Add_Bid" Height="1000" Width="1900" Background="#ffdadada" WindowState="Maximized" >
@@ -13,16 +14,16 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <Label Content="Название:" Margin="0,92.4,492.2,320.6" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Width="259"/>
+            <Label Content="{x:Static p:Resources.Name}" Margin="0,92.4,492.2,320.6" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" Width="259"/>
         </Border>
 
-        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="49" Margin="514,305,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите название" VerticalAlignment="Top" Width="259" FontSize="20"/>
-        <TextBox x:Name="textBoxAmount" HorizontalAlignment="Left" Height="50" Margin="831,297,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите кол-во" VerticalAlignment="Top" Width="259" FontSize="20" />
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="513,555,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click_8"/>
-        <Label Content="Объем:" HorizontalAlignment="Left" Margin="515,398,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="80"/>
-        <Label Content="Количество:" HorizontalAlignment="Left" Margin="831,258,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="128" RenderTransformOrigin="1.897,0.435"/>
-        <Label Content="Тип:" HorizontalAlignment="Left" Margin="831,396,0,0" VerticalAlignment="Top" Height="34" Width="62" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Формирование заявки:" HorizontalAlignment="Left" Margin="653,177,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="49" Margin="514,305,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Name}" VerticalAlignment="Top" Width="259" FontSize="20"/>
+        <TextBox x:Name="textBoxAmount" HorizontalAlignment="Left" Height="50" Margin="831,297,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_Quantity}" VerticalAlignment="Top" Width="259" FontSize="20" />
+        <Button Content="{x:Static p:Resources.Add}" HorizontalAlignment="Left" Margin="513,555,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="ButtonAdd_Click_8"/>
+        <Label Content="{x:Static p:Resources.Capacity}" HorizontalAlignment="Left" Margin="515,398,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="80"/>
+        <Label Content="{x:Static p:Resources.Amount}" HorizontalAlignment="Left" Margin="831,258,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="34" Width="128" RenderTransformOrigin="1.897,0.435"/>
+        <Label Content="{x:Static p:Resources.Type}" HorizontalAlignment="Left" Margin="831,396,0,0" VerticalAlignment="Top" Height="34" Width="62" FontSize="20" FontWeight="Bold"/>
+        <Label Content="{x:Static p:Resources.Application_Formation}" HorizontalAlignment="Left" Margin="653,177,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <ComboBox x:Name="capacityList" HorizontalAlignment="Left" Margin="513,460,0,0" VerticalAlignment="Top" Width="259" SelectionChanged="capacityList_SelectionChanged" FontSize="18" >
             <ComboBoxItem Content="0.3"/>
             <ComboBoxItem Content="0.5"/>
@@ -33,8 +34,8 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="5"/>
         </ComboBox>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="868,555,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
-        <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="50" Margin="831,447,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите тип" VerticalAlignment="Top" Width="259" FontSize="20" />
+        <Button Content="{x:Static p:Resources.ButtonBackStock}" HorizontalAlignment="Left" Margin="868,555,0,0" VerticalAlignment="Top" Width="222" Height="39" FontSize="20" Click="Button_Click" Background="#FFD42646" BorderBrush="#FFD42646"/>
+        <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="50" Margin="831,447,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="{x:Static p:Resources.Enter_category}" VerticalAlignment="Top" Width="259" FontSize="20" />
 
     </Grid>
 </Window>

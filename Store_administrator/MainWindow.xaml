@@ -13,7 +13,7 @@
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0" />
             </Border.Effect>
             <StackPanel>
-                <Image Height="100" Source="logo3.jpg"/>
+                <Image Height="93" Source="logo3.jpg"/>
 
                 <Grid Margin="0 0 0 20"/>
                 <TextBlock Text="       Авторизация администратора" FontSize="28" FontWeight="Bold" Margin="0 0 0 20" TextDecorations="{x:Null}" FontStyle="Italic" />

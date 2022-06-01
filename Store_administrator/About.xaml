@@ -1,16 +1,36 @@
-﻿<Window x:Class="Store_administrator.About"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_administrator"
+        xmlns:Properties="clr-namespace:Store_administrator.Properties" x:Class="Store_administrator.About"
         mc:Ignorable="d"
         Title="About"  Height="1000" Width="1900" Background="#ffdadada" WindowState="Maximized">
     <Grid RenderTransformOrigin="0.364,0.363">
-        <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="659" HorizontalAlignment="Left" Width="1381" Margin="325,153,0,0">
+        <Border x:Name="s1" MinWidth="720" Background="White" VerticalAlignment="Top" Padding="10" MaxWidth="1200" CornerRadius="25" Height="659" HorizontalAlignment="Left" Width="1168" Margin="174,58,0,0">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
         </Border>
+        <Grid>
+            <ScrollViewer HorizontalAlignment="Left" Height="632" Margin="174,69,0,0" VerticalAlignment="Top" Width="1168">
+                <StackPanel>
+                    <Label Content="Справочная система для программного обеспечения &#xA;       &quot;AРM администратора магазина «Кристалл»&quot;" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="Автоматизрованное рабочее место, предназначенный для автоматизации деятельности администратора магазина &quot;Кристалл&quot;." FontSize="18" HorizontalAlignment="Left" Margin="45,10,0,0"/>
+                    <Label Content="Все функциональные возможности АРМ Администратор доступны пользователям через главное меню." FontSize="18" HorizontalAlignment="Left" Margin="15,7,0,0"/>
+                    <Label Content="Перечисление всех пунктов главного меню и краткое описание соответствующих им функциональных возможностей:" FontSize="18" HorizontalAlignment="Left" Margin="15,7,0,0"/>
+                    <Label Content="Меню :&#xA;Пункт Товары – Таблица Товары и взаимодействие с ними.&#xA;Пункт Склад– Таблица Склада и взаимодействие с ним.&#xA;Пункт Добавить администратора – Взаимодействие со списками Администраторов.&#xA;Пункт Заявки - Таблица со списком заявок для пополнения Склада.'" FontSize="18" HorizontalAlignment="Left" Margin="15,7,0,0" FontWeight="Bold" FontStyle="Italic"/>
+                    <Image Height="340" Source="Image9.png" Stretch="Fill" Width="502"/>
+                    <Label Content="Окно «Товары»" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="Данное окно предназначено для взаимодействия с товарами: Добавление, Удаление, Сортировка, Поиск." FontSize="18" HorizontalAlignment="Left" Margin="15,7,0,0"/>
+                    <Label Content="Товары :&#xA;По кнопке &quot;Добавить&quot; открыватеся новое окно &quot;Добавление товара&quot; с текстовыми полями.&#xA;По кнопке &quot;Удалить&quot; Будет удален товар из Списка товаров, который был выделен Пользователем&#xA;По кнопке &quot;Сортировать по количеству&quot; будет произведена сортировка товаров по количеству.&#xA;По кнопке &quot;Сортировать по цене&quot; будет произведена сортировка товаров по количеству.&#xA;По кнопке &quot;Склад&quot; будет открыто новое окно с таблицей товаров на складе.&#xA;По кнопкам &quot;Поиск&quot; будет произведен поиск по указаным требованиям&#xA;По кнопке &quot;Назад&quot; пользователь будет возвращен на окно &quot;Меню&quot;&#xA;&#xA;&#xA;" FontSize="18" HorizontalAlignment="Left" Margin="15,7,0,0" FontWeight="Bold" FontStyle="Italic" Height="221"/>
+                    <Image Height="354" Source="Image1.png" Stretch="Fill" Width="721"/>
+                    <Label Content="Добавление товаров:&#xA;Пользователь заполнив все необходимые поля валидными данными нажимает кнопку &quot;Добавить&quot;&#xA;Товар будет добавлен в таблицу товаров в окне &quot;Товары&quot;.&#xA;По нажатии кнопки &quot;Назад&quot; пользователь перейдет в окно &quot;Меню&quot;&#xA;" FontSize="18" HorizontalAlignment="Left" Margin="15,7,0,0" FontWeight="Bold" FontStyle="Italic" Height="108"/>
+                    <Image Height="375" Source="Image2.png" Stretch="Fill" Width="623"/>
+                </StackPanel>
+            </ScrollViewer>
+            <Button Content="{x:Static Properties:Resources.ButtonBackStock}" HorizontalAlignment="Left" Margin="1069,737,0,0" VerticalAlignment="Top" Width="273" Height="51" FontSize="20" Click="Button_Click_1" Background="#FFA51919" BorderBrush="#FFA51919"/>
+        </Grid>
     </Grid>
 </Window>

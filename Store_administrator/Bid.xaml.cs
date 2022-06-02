@@ -122,31 +122,85 @@ namespace Store_administrator
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            goodsGrid.SelectAllCells();
-            goodsGrid.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
-            ApplicationCommands.Copy.Execute(null, goodsGrid);
-            goodsGrid.UnselectAllCells();
-            var result = (string)Clipboard.GetData(DataFormats.Text);
-            dynamic wordApp = null;
-            try
+            int RowCount = goodsTable.Rows.Count;
+            int ColumnCount = goodsTable.Columns.Count;
+            Object[,] DataArray = new object[RowCount + 1, ColumnCount + 1];
+
+            //Добавление строк и ячеек 
+            int r = 0;
+            for (int c = 0; c <= ColumnCount - 1; c++)
             {
-                var sw = new StreamWriter($"{Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)}\\отчет.doc");
-                sw.WriteLine(result);
-                sw.Close();
-                //var proc = Process.Start("export.doc");
-                Type wordType = Type.GetTypeFromProgID("Word.Application");
-                wordApp = Activator.CreateInstance(wordType);
-                wordApp.Documents.Add($"{ Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)}\\отчет.doc");
-                wordApp.ActiveDocument.Range.ConvertToTable(1, goodsGrid.Items.Count, goodsGrid.Columns.Count);
-                MessageBox.Show("Отчет успешно создан! \n Находится на рабочем столе!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                if (wordApp != null)
+                for (r = 0; r <= RowCount - 1; r++)
                 {
-                    wordApp.Quit();
+                    DataArray[r, c] = goodsTable.Rows[r].ItemArray[c];
                 }
+            }
+
+            Microsoft.Office.Interop.Word.Document oDoc = new Microsoft.Office.Interop.Word.Document();
+            oDoc.Application.Visible = true;
+
+            //Ориентация листа 
+            oDoc.PageSetup.Orientation = Microsoft.Office.Interop.Word.WdOrientation.wdOrientLandscape;
+
+
+            dynamic oRange = oDoc.Content.Application.Selection.Range;
+            string oTemp = "";
+            for (r = 0; r <= RowCount - 1; r++)
+            {
+                for (int c = 0; c <= ColumnCount - 1; c++)
+                {
+                    oTemp = oTemp + DataArray[r, c] + "\t";
+
+                }
+            }
+
+            //Формат таблицы 
+            oRange.Text = oTemp;
+            object oMissing = Missing.Value;
+            object Separator = Microsoft.Office.Interop.Word.WdTableFieldSeparator.wdSeparateByTabs;
+            object ApplyBorders = true;
+            object AutoFit = true;
+            object AutoFitBehavior = Microsoft.Office.Interop.Word.WdAutoFitBehavior.wdAutoFitContent;
+
+            oRange.ConvertToTable(ref Separator, ref RowCount, ref ColumnCount,
+                                  Type.Missing, Type.Missing, ref ApplyBorders,
+                                  Type.Missing, Type.Missing, Type.Missing,
+                                  Type.Missing, Type.Missing, Type.Missing,
+                                  Type.Missing, ref AutoFit, ref AutoFitBehavior, Type.Missing);
+
+            oRange.Select();
+
+            oDoc.Application.Selection.Tables[1].Select();
+            oDoc.Application.Selection.Tables[1].Rows.AllowBreakAcrossPages = 0;
+            oDoc.Application.Selection.Tables[1].Rows.Alignment = 0;
+            oDoc.Application.Selection.Tables[1].Rows[1].Select();
+            oDoc.Application.Selection.InsertRowsAbove(1);
+            oDoc.Application.Selection.Tables[1].Rows[1].Select();
+
+            //Стиль заголовка таблицы 
+            oDoc.Application.Selection.Tables[1].Rows[1].Range.Bold = 2;
+            oDoc.Application.Selection.Tables[1].Rows[1].Range.Font.Name = "Tahoma";
+            oDoc.Application.Selection.Tables[1].Rows[1].Range.Font.Size = 14;
+
+            //add header row manually 
+
+            for (int c = 0; c <= ColumnCount - 1; c++)
+            {
+                oDoc.Application.Selection.Tables[1].Cell(1, c + 1).Range.Text = goodsTable.Columns[c].ColumnName;
+            }
+
+            //Стили таблицы 
+            oDoc.Application.Selection.Tables[1].Rows[1].Select();
+            oDoc.Application.Selection.Cells.VerticalAlignment = Microsoft.Office.Interop.Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+            oDoc.Application.Selection.Tables[1].Borders.Enable = 1;
+
+
+            //Текст шапки 
+            foreach (Microsoft.Office.Interop.Word.Section section in oDoc.Application.ActiveDocument.Sections)
+            {
+                Microsoft.Office.Interop.Word.Range headerRange = section.Headers[Microsoft.Office.Interop.Word.WdHeaderFooterIndex.wdHeaderFooterPrimary].Range;
+                headerRange.Fields.Add(headerRange, Microsoft.Office.Interop.Word.WdFieldType.wdFieldPage);
+                headerRange.Text = $"Заявки на товары";
             }
         }
     }
